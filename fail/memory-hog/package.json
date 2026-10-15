@@ -1,0 +1,5 @@
+{
+  "name": "memory-hog",
+  "private": true,
+  "scripts": { "start": "node server.js" }
+}
