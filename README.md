@@ -35,7 +35,8 @@ Railpack builds them and Caddy serves the files.
 
 | `appRoot` | App | Expected error |
 | --- | --- | --- |
-| `fail/sveltekit-auto` | SvelteKit with the template's `adapter-auto`, no start script | Build: `START_COMMAND_NOT_FOUND` |
+| `fail/sveltekit-auto` | SvelteKit with the template's `adapter-auto`, no start script | Deployment: `APP_CRASHED`. Railpack 0.40.1 forces adapter-node and starts `node build`, which SvelteKit 3 does not produce this way |
+| `fail/no-start` | A Node package with neither a start script nor an entry file | Build: `START_COMMAND_NOT_FOUND` |
 | `fail/nginx` | The official `nginx` image (Dockerfile) | Deployment: `APP_CRASHED`, hinting `nginxinc/nginx-unprivileged` |
 | `fail/crash` | Exits with code 3 | Deployment: `APP_CRASHED` with the exit code |
 | `fail/localhost` | Listens on 127.0.0.1 only | Deployment: `APP_NOT_LISTENING` |
