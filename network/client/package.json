@@ -1,0 +1,5 @@
+{
+  "name": "network-client",
+  "private": true,
+  "scripts": { "start": "node server.js" }
+}

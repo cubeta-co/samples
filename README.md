@@ -40,3 +40,14 @@ Railpack builds them and Caddy serves the files.
 | `fail/crash` | Exits with code 3 | Deployment: `APP_CRASHED` with the exit code |
 | `fail/localhost` | Listens on 127.0.0.1 only | Deployment: `APP_NOT_LISTENING` |
 | `fail/memory-hog` | Allocates memory until stopped | Deployment: `APP_OUT_OF_MEMORY` |
+
+## Private network
+
+| `appRoot` | App |
+| --- | --- |
+| `network/api` | Answers `pong` |
+| `network/client` | Calls `API_URL` on each request and answers `reached: pong`, or `unreachable: <error>` |
+
+Deploy both with the same `networkGroup` and `API_URL` set to the API's
+`internalUrl`: the client reaches it. With another group, or none, it does
+not.
